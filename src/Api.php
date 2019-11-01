@@ -164,14 +164,14 @@ class Api extends AbstractAPI
      * @throws \ErrorException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function uploadImageV2($path)
+    public function uploadImageV2($path,$name)
     {
         $endpoint = 'v2/upload';
 
         $options = [
             'api_select' => '',
             'file_path'  => $path,
-            'file_name'  => '123.png'
+            'file_name'  => $name
         ];
         return $this->uploadFile($endpoint, $options);
     }
